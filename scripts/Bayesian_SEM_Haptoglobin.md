@@ -1,6 +1,46 @@
 # Bayesian Structural Equation Modelling - modelling Haptoglobin immune assay
 
 
+- [Bayesian Structural Equation Modelling - modelling Haptoglobin immune assay](#bayesian-structural-equation-modelling---modelling-haptoglobin-immune-assay)
+  * [A) 16S rRNA (bacterial microbiota) SEM analysis](#a--16s-rrna--bacterial-microbiota--sem-analysis)
+    + [1. Define SEM for each diversity measurement](#1-define-sem-for-each-diversity-measurement)
+    + [2. Run brms](#2-run-brms)
+    + [3. Model Diagnostics Shannon](#3-model-diagnostics-shannon)
+      - [3.1 Model Summary](#31-model-summary)
+      - [3.2 Model diagnostics](#32-model-diagnostics)
+      - [3.3 Compare distribution of response variable to distributions of predicted response variable](#33-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable)
+      - [3.4 Plot model posterior and credible intervals](#34-plot-model-posterior-and-credible-intervals)
+    + [4. Model diagnostics - Faith PD](#4-model-diagnostics---faith-pd)
+      - [4.1 Model summary](#41-model-summary)
+      - [4.2 Model diagnostics](#42-model-diagnostics)
+      - [4.3 Compare distribution of response variable to distributions of predicted response variable](#43-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable)
+      - [4.4 Plot model posterior and credible intervals](#44-plot-model-posterior-and-credible-intervals)
+    + [5. Model diagnostics - N° of observed ASV's](#5-model-diagnostics---n--of-observed-asv-s)
+      - [5.1 Model summary](#51-model-summary)
+      - [5.2 Model diagnostics](#52-model-diagnostics)
+      - [5.3 Compare distribution of response variable to distributions of predicted response variable](#53-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable)
+      - [5.4 Plot model posterior and credible intervals](#54-plot-model-posterior-and-credible-intervals)
+  * [B) 28S rRNA (eukaryotic microbiota) SEM analysis](#b--28s-rrna--eukaryotic-microbiota--sem-analysis)
+    + [1. Define SEM for each diversity measurement](#1-define-sem-for-each-diversity-measurement-1)
+    + [2. Run brms](#2-run-brms-1)
+    + [3. Model Diagnostics - Shannon](#3-model-diagnostics---shannon)
+      - [3.1 Model Summary](#31-model-summary-1)
+      - [3.2 Model diagnostics](#32-model-diagnostics-1)
+      - [3.3 Compare distribution of response variable to distributions of predicted response variable](#33-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable-1)
+      - [3.4 Plot model posterior and credible intervals](#34-plot-model-posterior-and-credible-intervals-1)
+    + [4. Model diagnostics - Faith PD](#4-model-diagnostics---faith-pd-1)
+      - [4.1 Model summary](#41-model-summary-1)
+      - [4.2 Model diagnostics](#42-model-diagnostics-1)
+      - [4.3 Compare distribution of response variable to distributions of predicted response variable](#43-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable-1)
+      - [4.4 Plot model posterior and credible intervals](#44-plot-model-posterior-and-credible-intervals-1)
+    + [5. Model diagnostics - N° of observed ASV's](#5-model-diagnostics---n--of-observed-asv-s-1)
+      - [5.1 Model summary](#51-model-summary-1)
+      - [5.2 Model diagnostics](#52-model-diagnostics-1)
+      - [5.3 Compare distribution of response variable to distributions of predicted response variable](#53-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable-1)
+      - [5.4 Plot model posterior and credible intervals](#54-plot-model-posterior-and-credible-intervals-1)
+
+
+
 ## A) 16S rRNA (bacterial microbiota) SEM analysis
 
 ### 1. Define SEM for each diversity measurement  
