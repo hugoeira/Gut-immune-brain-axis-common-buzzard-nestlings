@@ -1,22 +1,7 @@
 # Bayesian Structural Equation Modelling - modelling Haptoglobin immune assay
 
 
-
-------
-
-## Table of contents
-
-[TOC]
-
-------
-
-
-
-
-
 ## A) 16S rRNA (bacterial microbiota) SEM analysis
-
-
 
 ### 1. Define SEM for each diversity measurement  
 
@@ -73,7 +58,6 @@ sem_hapto_asv <- path1 + path2 + path3 + path4
 ```
 
 
-
 ### 2. Run brms
 
 ```R
@@ -103,7 +87,6 @@ model_hapto_asv <-brm(sem_hapto_asv + set_rescor(FALSE),
 ```
 
 
-
 ### 3. Model Diagnostics Shannon
 
 #### 3.1 Model Summary
@@ -116,8 +99,6 @@ summary_shannon<- summary(model_hapto_shannon)
 R2m_shannon <- bayes_R2(model_hapto_shannon,re_formula=NA)
 R2c_shannon <- bayes_R2(model_hapto_shannon)
 ```
-
-
 
 #### 3.2 Model diagnostics 
 
@@ -133,8 +114,7 @@ for (i in 1:length(diagnostic_shannon)) {
   ggsave(filename = paste0(filename, ".png"), plot = diagnostic_plots[[i]], device = "png", dpi=300)
 }
 ```
-
-![16s_diagnostic_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Hapto/16s_diagnostic_shannon.png)
+<img src="/pics/16s_diagnostic_shannon_hapto.png" alt="16s_diagnostic_shannon_hapto.png" width="50%">
 
 
 
@@ -155,9 +135,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![16s_posterior_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Hapto/16s_posterior_shannon.svg)
-
+<img src="/pics/16s_posterior_shannon_hapto.svg" alt="16s_posterior_shannon_hapto.svg" width="50%">
 
 
 #### 3.4 Plot model posterior and credible intervals
@@ -179,7 +157,6 @@ ggsave(filename="16s_effect_sizes_shannon.svg", plot=plot1, device = "svg", widt
 ```
 
 
-
 ### 4. Model diagnostics - Faith PD
 
 #### 4.1 Model summary
@@ -192,8 +169,6 @@ summary_faith<- summary(model_hapto_faith)
 R2m_faith <- bayes_R2(model_hapto_faith,re_formula=NA)
 R2c_faith <- bayes_R2(model_hapto_faith)
 ```
-
-
 
 #### 4.2 Model diagnostics 
 
@@ -209,10 +184,7 @@ for (i in 1:length(diagnostic_faith)) {
   ggsave(filename = paste0(filename, ".png"), plot = diagnostic_plots[[i]], device = "png", dpi=200)
 }
 ```
-
-![16s_diagnostic_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Hapto/16s_diagnostic_faith.png)
-
-
+<img src="/pics/16s_diagnostic_faith_hapto.png" alt="16s_diagnostic_faith_hapto.png" width="50%">
 
 #### 4.3 Compare distribution of response variable to distributions of predicted response variable
 
@@ -227,9 +199,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![16s_posterior_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Hapto/16s_posterior_faith.svg)
-
+<img src="/pics/16s_posterior_faith_hapto.svg" alt="16s_posterior_faith_hapto.svg" width="50%">
 
 
 #### 4.4 Plot model posterior and credible intervals
@@ -251,7 +221,6 @@ ggsave(filename="16s_effect_sizes_faith.svg", plot=plot1, device = "svg", width 
 ```
 
 
-
 ### 5. Model diagnostics - N° of observed ASV's
 
 #### 5.1 Model summary
@@ -264,8 +233,6 @@ summary_asv<- summary(model_hapto_asv)
 R2m_asv <- bayes_R2(model_hapto_asv,re_formula=NA)
 R2c_asv <- bayes_R2(model_hapto_asv)
 ```
-
-
 
 #### 5.2 Model diagnostics 
 
@@ -281,9 +248,7 @@ for (i in 1:length(diagnostic_asv)) {
   ggsave(filename = paste0(filename, ".png"), plot = diagnostic_plots[[i]], device = "png", dpi= 300)
 }
 ```
-
-![16s_diagnostic_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Hapto/16s_diagnostic_asv.png)
-
+<img src="/pics/16s_diagnostic_asv_hapto.png" alt="16s_diagnostic_asv_hapto.png" width="50%">
 
 
 #### 5.3 Compare distribution of response variable to distributions of predicted response variable
@@ -299,9 +264,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![16s_posterior_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Hapto/16s_posterior_asv.svg)
-
+<img src="/pics/16s_posterior_asv_hapto.svg" alt="16s_posterior_asv_hapto.svg" width="50%">
 
 
 #### 5.4 Plot model posterior and credible intervals
@@ -323,12 +286,7 @@ ggsave(filename="16s_effect_sizes_asv.svg", plot=plot1, device = "svg", width = 
 ```
 
 
-
-
-
 ## B) 28S rRNA (eukaryotic microbiota) SEM analysis
-
-
 
 ### 1. Define SEM for each diversity measurement 
 
@@ -376,7 +334,6 @@ sem_hapto_asv <- path1 + path2 + path3 + path4
 ```
 
 
-
 ### 2. Run brms
 
 ```R
@@ -406,9 +363,6 @@ model_hapto_asv <-brm(sem_hapto_asv + set_rescor(FALSE),
 ```
 
 
-
-
-
 ### 3. Model Diagnostics - Shannon
 
 #### 3.1 Model Summary
@@ -421,8 +375,6 @@ summary_shannon<- summary(model_hapto_shannon)
 R2m_shannon <- bayes_R2(model_hapto_shannon,re_formula=NA)
 R2c_shannon <- bayes_R2(model_hapto_shannon)
 ```
-
-
 
 #### 3.2 Model diagnostics 
 
@@ -438,9 +390,7 @@ for (i in 1:length(diagnostic_shannon)) {
   ggsave(filename = paste0(filename, ".png"), plot = diagnostic_plots[[i]], device = "png", dpi=300)
 }
 ```
-
-![28s_diagnostic_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/Hapto/28s_diagnostic_shannon.png)
-
+<img src="/pics/28s_diagnostic_shannon_hapto.png" alt="28s_diagnostic_shannon_hapto.png" width="50%">
 
 
 #### 3.3 Compare distribution of response variable to distributions of predicted response variable
@@ -461,9 +411,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![28s_posterior_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/Hapto/28s_posterior_shannon.svg)
-
+<img src="/pics/28s_posterior_shannon_hapto.svg" alt="28s_posterior_shannon_hapto.svg" width="50%">
 
 
 #### 3.4 Plot model posterior and credible intervals
@@ -485,9 +433,6 @@ ggsave(filename="16s_effect_sizes_shannon.svg", plot=plot4, device = "svg", widt
 ```
 
 
-
-
-
 ### 4. Model diagnostics - Faith PD
 
 #### 4.1 Model summary
@@ -500,8 +445,6 @@ summary_faith<- summary(model_hapto_faith)
 R2m_faith <- bayes_R2(model_hapto_faith,re_formula=NA)
 R2c_faith <- bayes_R2(model_hapto_faith)
 ```
-
-
 
 #### 4.2 Model diagnostics 
 
@@ -517,8 +460,7 @@ for (i in 1:length(diagnostic_faith)) {
   ggsave(filename = paste0(filename, ".png"), plot = diagnostic_plots[[i]], device = "png", dpi=200)
 }
 ```
-
-![28s_diagnostic_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/Hapto/28s_diagnostic_faith.png)
+<img src="/pics/28s_diagnostic_faith_hapto.png" alt="28s_diagnostic_faith_hapto.png" width="50%">
 
 
 
@@ -535,10 +477,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![28s_posterior_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/Hapto/28s_posterior_faith.svg)
-
-
+<img src="/pics/28s_posterior_faith_hapto.svg" alt="28s_posterior_faith_hapto.svg" width="50%">
 
 #### 4.4 Plot model posterior and credible intervals
 
@@ -559,7 +498,6 @@ ggsave(filename="16s_effect_sizes_faith.svg", plot=plot5, device = "svg", width 
 ```
 
 
-
 ### 5. Model diagnostics - N° of observed ASV's
 
 #### 5.1 Model summary
@@ -572,8 +510,6 @@ summary_asv<- summary(model_hapto_asv)
 R2m_asv <- bayes_R2(model_hapto_asv,re_formula=NA)
 R2c_asv <- bayes_R2(model_hapto_asv)
 ```
-
-
 
 #### 5.2 Model diagnostics 
 
@@ -589,9 +525,7 @@ for (i in 1:length(diagnostic_asv)) {
   ggsave(filename = paste0(filename, ".png"), plot = diagnostic_plots[[i]], device = "png", dpi= 300)
 }
 ```
-
-![28s_diagnostic_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/Hapto/28s_diagnostic_asv.png)
-
+<img src="/pics/28s_diagnostic_asv_hapto.png" alt="28s_diagnostic_asv_hapto.png" width="50%">
 
 
 #### 5.3 Compare distribution of response variable to distributions of predicted response variable
@@ -607,9 +541,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![28s_posterior_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/Hapto/28s_posterior_asv.svg)
-
+<img src="/pics/28s_posterior_asv_hapto.svg" alt="28s_posterior_asv_hapto.svg" width="50%">
 
 
 #### 5.4 Plot model posterior and credible intervals
@@ -629,6 +561,3 @@ theme(text = element_text(family = "Arial"))
 
 ggsave(filename="16s_effect_sizes_faith.svg", plot=plot1, device = "svg", width = 8, height = 10)
 ```
-
-
-
