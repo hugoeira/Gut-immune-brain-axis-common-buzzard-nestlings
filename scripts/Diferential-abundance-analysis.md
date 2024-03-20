@@ -1,18 +1,26 @@
 # Diferential Abundant Analysis with ANOCOM-BC2
 
-
-
 Pipeline adapted from https://bioconductor.org/packages/release/bioc/vignettes/ANCOMBC/inst/doc/ANCOMBC2.html
 
-
-
-## Table of Contents
+- [Diferential Abundant Analysis with ANOCOM-BC2](#diferential-abundant-analysis-with-anocom-bc2)
+- [A) DAA 16s rRNA](#a--daa-16s-rrna)
+    + [1. Read in the data](#1-read-in-the-data)
+    + [2. Run ANCOM-BC2](#2-run-ancom-bc2)
+      - [2.1 ANCOM-BC2 at ASV level](#21-ancom-bc2-at-asv-level)
+        * [2.1.1 ANCOM-BC2 primary analysis](#211-ancom-bc2-primary-analysis)
+        * [2.1.2 Sensitivity scores](#212-sensitivity-scores)
+        * [2.2.3 Plot ANCOM-BC2 results](#223-plot-ancom-bc2-results)
+- [B) DAA 28s rRNA](#b--daa-28s-rrna)
+    + [1. Read in the data](#1-read-in-the-data-1)
+    + [2. Run ANCOM-BC2](#2-run-ancom-bc2-1)
+      - [2.1 ANCOM-BC2 at ASV level](#21-ancom-bc2-at-asv-level-1)
+        * [2.1.1 ANCOM-BC2 primary analysis](#211-ancom-bc2-primary-analysis-1)
+        * [2.1.2 Sensitivity scores](#212-sensitivity-scores-1)
+        * [2.2.3 Plot ANCOM-BC2 results](#223-plot-ancom-bc2-results-1)
 
 
 
 # A) DAA 16s rRNA
-
-
 
 ### 1. Read in the data
 
@@ -29,7 +37,6 @@ library(ggrepel)
 
 ps_immune <- readRDS("ps_immune.rds")
 ```
-
 
 
 ### 2. Run ANCOM-BC2
@@ -73,7 +80,6 @@ output_hapto = ancombc2(data = ps_immune, assay_name = "counts", tax_level = NUL
 ```
 
 
-
 ##### 2.1.1 ANCOM-BC2 primary analysis
 
 ```R
@@ -106,8 +112,6 @@ tab_sens_immunity = output_immunity$ss_tab
 
 tab_sens_hapto = output_hapto$ss_tab
 ```
-
-
 
 ##### 2.2.3 Plot ANCOM-BC2 results
 
@@ -255,20 +259,14 @@ fig_sens_age = sens_age %>%
 fig_sens_age
 
 ```
-
-
-
-![16_sensitivity_hapto_age](/home/localadmin/microbiome-analysis/Path_analysis/DAA/plots/16_sensitivity_hapto_age.svg)
+<img src="/pics/16_sensitivity_hapto_age.svg" alt="16_sensitivity_hapto_age.svg" width="50%">
 
 **For the co-variate of age, the significant taxa have high sensitivity scores.**
 
 
 
 
-
 # B) DAA 28s rRNA
-
-
 
 ### 1. Read in the data
 
@@ -278,10 +276,7 @@ ps_immune <- readRDS("ps_immune.rds")
 ```
 
 
-
 ### 2. Run ANCOM-BC2
-
-
 
 #### 2.1 ANCOM-BC2 at ASV level
 
@@ -360,7 +355,6 @@ tab_sens_immunity = output_immunity$ss_tab
 
 tab_sens_hapto = output_hapto$ss_tab
 ```
-
 
 
 ##### 2.2.3 Plot ANCOM-BC2 results
@@ -484,8 +478,6 @@ volc_hapto_bci <- ggplot(data=res_prim_hapto, aes(x=lfc_std_bci_two, y=-log10(p_
 
 
 
-
-
 ```R
 # Pseudo count sensitivity analysis
 
@@ -530,7 +522,7 @@ fig_sens_asv_age = sens_asv_age %>%
 fig_sens_asv_age
 ```
 
-![28s_sensitivity_immune_bci_age](/home/localadmin/microbiome-analysis/Path_analysis/DAA/plots/28s_sensitivity_immune_bci_age.svg)
+<img src="/pics/28s_sensitivity_immune_bci_age.svg" alt="28s_sensitivity_immune_bci_age.svg" width="50%">
 
 **For the co-variate of Age the deferentially abundant ASV has high sensitivity scores**
 
@@ -562,6 +554,5 @@ fig_bci_asv = df_fig_bci_asv %>%
         axis.text.x = element_text(angle = 60, hjust = 1))
 fig_bci_asv
 ```
-
-<img src="/home/localadmin/microbiome-analysis/Path_analysis/DAA/plots/28s_daa_bci_changes.svg" alt="daa_bci_changes" style="zoom:80%;" />
+<img src="/pics/28s_daa_bci_changes.svg" alt="28s_daa_bci_changes.svg" width="50%">
 
