@@ -428,7 +428,7 @@ for (i in 1:length(diagnostic_shannon)) {
 }
 ```
 
-![16s_diagnostic_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_diagnostic_shannon.png)
+![16s_diagnostic_shannon](/pics/16s_diagnostic_shannon.png)
 
 
 #### 4.3 Compare distribution of response variable to distributions of predicted response variable
@@ -448,8 +448,8 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
+<img src="/pics/16s_posterior_shannon.svg" alt="16s_posterior_shannon.svg" width="50%">
 
-![16s_posterior_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_posterior_shannon.svg)
 
 
 #### 4.4 Plot model posterior and credible intervals
@@ -499,7 +499,7 @@ for (i in 1:length(diagnostic_faith)) {
 }
 ```
 
-![16s_diagnostic_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_diagnostic_faith.png)
+![16s_diagnostic_faith](/pics/16s_diagnostic_faith.png)
 
 
 #### 5.3 Compare distribution of response variable to distributions of predicted response variable
@@ -515,8 +515,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![16s_posterior_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_posterior_faith.svg)
+<img src="/pics/16s_posterior_faith.svg" alt="16s_posterior_faith.svg" width="50%">
 
 
 #### 5.4 Plot model posterior and credible intervals
@@ -565,9 +564,7 @@ for (i in 1:length(diagnostic_asv)) {
   ggsave(filename = paste0(filename, ".png"), plot = diagnostic_plots[[i]], device = "png", dpi= 300)
 }
 ```
-
-![16s_diagnostic_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_diagnostic_asv.png)
-
+![16s_diagnostic_asv](/pics/16s_diagnostic_asv.png)
 
 #### 6.3 Compare distribution of response variable to distributions of predicted response variable
 
@@ -582,8 +579,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![16s_posterior_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_posterior_asv.svg)
+<img src="/pics/16s_posterior_asv.svg" alt="16s_posterior_asv.svg" width="50%">
 
 
 #### 6.4 Plot model posterior and credible intervals
@@ -745,7 +741,7 @@ for (i in 1:length(diagnostic_shannon)) {
 }
 ```
 
-![28s_diagnostic_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_diagnostic_shannon.png)
+![28s_diagnostic_shannon](/pics/28s_diagnostic_shannon.png)
 
 
 #### 4.3 Compare distribution of response variable to distributions of predicted response variable
@@ -766,8 +762,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![28s_posterior_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_posterior_shannon.svg)
+<img src="/pics/28s_posterior_shannon.svg" alt="28s_posterior_shannon.svg" width="50%">
 
 
 #### 4.4 Plot model posterior and credible intervals
@@ -817,7 +812,7 @@ for (i in 1:length(diagnostic_faith)) {
 }
 ```
 
-![28s_diagnostic_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_diagnostic_faith.png)
+![28s_diagnostic_faith](/pics/28s_diagnostic_faith.png)
 
 
 #### 5.3 Compare distribution of response variable to distributions of predicted response variable
@@ -833,8 +828,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![28s_posterior_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_posterior_faith.svg)
+<img src="/pics/28s_posterior_faith.svg" alt="28s_posterior_faith.svg" width="50%">
 
 
 #### 5.4 Plot model posterior and credible intervals
@@ -883,7 +877,7 @@ for (i in 1:length(diagnostic_asv)) {
 }
 ```
 
-![28s_diagnostic_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_diagnostic_asv.png)
+![28s_diagnostic_asv](/pics/28s_diagnostic_asv.png)
 
 
 #### 6.3 Compare distribution of response variable to distributions of predicted response variable
@@ -899,8 +893,7 @@ for (i in seq_along(responses)) {
   ggsave(filename = paste0(filename, ".svg"), plot = pp_check_plot, device = "svg", width = 8, height = 10)
 }
 ```
-
-![28s_posterior_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_posterior_asv.svg)
+<img src="/pics/28s_posterior_asv.svg" alt="28s_posterior_asv.svg" width="50%">
 
 
 #### 6.4 Plot model posterior and credible intervals
