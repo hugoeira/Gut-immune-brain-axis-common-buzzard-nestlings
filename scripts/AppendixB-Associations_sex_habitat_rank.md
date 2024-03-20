@@ -917,13 +917,12 @@ adjusted_p_values_igy
 
 ### 9.1 Body condition index (BCI)
 
-![bci_interactions_all](/home/localadmin/microbiome-analysis/Path_analysis/Main_figures_tables/Supplementary/bci_interactions_all.svg)
+![](/pics/bci_interactions_all.svg)
 
 ### 9.2 CORT
 
-![cort_interactions_all](/home/localadmin/microbiome-analysis/Path_analysis/Main_figures_tables/Supplementary/cort_interactions_all.svg)
+![](/pics/cort_interactions_all.svg)
 
 ### 9.3 Immune assays
 
-![immune_assays_all](/home/localadmin/microbiome-analysis/Path_analysis/Main_figures_tables/Supplementary/immune_assays_all.svg)
-
+![](/pics/immune_assays_all.svg)
