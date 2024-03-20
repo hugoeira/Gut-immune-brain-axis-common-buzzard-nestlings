@@ -1,14 +1,47 @@
 # Testing for associations of the variables of interest with : sex, habitat and rank
 
 
-
-## Table of Contents
-
-[TOC]
-
-------
-
-
+- [Testing for associations of the variables of interest with : sex, habitat and rank](#testing-for-associations-of-the-variables-of-interest-with---sex--habitat-and-rank)
+  * [1. Read in the data](#1-read-in-the-data)
+  * [2. Body condition index](#2-body-condition-index)
+    + [2.1 Sex](#21-sex)
+    + [2.2 Habitat](#22-habitat)
+    + [2.3 Rank](#23-rank)
+    + [2.4 Adjust p values](#24-adjust-p-values)
+  * [3. Corticosterone (CORT)](#3-corticosterone--cort-)
+    + [3.1 Sex](#31-sex)
+    + [3.2 Habitat](#32-habitat)
+    + [3.3 Rank](#33-rank)
+    + [3.4 Adjust p values](#34-adjust-p-values)
+  * [4. Hemagglutination](#4-hemagglutination)
+    + [4.1 Sex](#41-sex)
+    + [4.2 Habitat](#42-habitat)
+    + [4.3 Rank](#43-rank)
+    + [4.4 Adjust p values](#44-adjust-p-values)
+  * [5. Hemolysis](#5-hemolysis)
+    + [5.1 Sex](#51-sex)
+    + [5.2 Habitat](#52-habitat)
+    + [5.3 Rank](#53-rank)
+    + [5.4 Adjust p values](#54-adjust-p-values)
+  * [6. Bacteria killing assay](#6-bacteria-killing-assay)
+    + [6.1 Sex](#61-sex)
+    + [6.2 Habitat](#62-habitat)
+    + [6.3 Rank](#63-rank)
+    + [6.4 Adjust p values](#64-adjust-p-values)
+  * [7. Lysozyme](#7-lysozyme)
+    + [7.1 Sex](#71-sex)
+    + [7.2 Habitat](#72-habitat)
+    + [7.3 Rank](#73-rank)
+    + [7.4 Adjust p values](#74-adjust-p-values)
+  * [8. Immunoglobulin Y](#8-immunoglobulin-y)
+    + [8.1 Sex](#81-sex)
+    + [8.2 Habitat](#82-habitat)
+    + [8.3 Rank](#83-rank)
+    + [8.4 Adjust p values](#84-adjust-p-values)
+  * [9. Associations between the variables of interest and: sex; habitat and rank](#9-associations-between-the-variables-of-interest-and--sex--habitat-and-rank)
+    + [9.1 Body condition index (BCI)](#91-body-condition-index--bci-)
+    + [9.2 CORT](#92-cort)
+    + [9.3 Immune assays](#93-immune-assays)
 
 
 
@@ -38,7 +71,6 @@ metadata$std_igy <- as.numeric(scale(metadata$igy))
 metadata$std_hapto <- as.numeric(scale(metadata$hapto))
 metadata$std_shannon <- as.numeric(scale(metadata$shannon_entropy))
 ```
-
 
 
 ## 2. Body condition index 
@@ -77,7 +109,6 @@ bci_sex_plot <- ggplot(metadata, aes(x = sex, y = std_bci_two, fill = sex)) +
 ```
 
 
-
 ### 2.2 Habitat
 
 ```R
@@ -112,8 +143,6 @@ bci_habitat_plot <- ggplot(metadata, aes(x = habitat, y = std_bci_two, fill = ha
   theme(legend.position = "none")+
   theme(text = element_text(family = "Arial"))
 ```
-
-
 
 ### 2.3 Rank
 
@@ -151,8 +180,6 @@ bci_rank_plot <- ggplot(metadata, aes(x = rank, y = std_bci_two, fill = rank)) +
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 2.4 Adjust p values
 
 ```R
@@ -170,12 +197,7 @@ adjusted_p_values_bci
 ```
 
 
-
-
-
 ## 3. Corticosterone (CORT)
-
-
 
 ### 3.1 Sex
 
@@ -209,8 +231,6 @@ cort_sex_plot <- ggplot(metadata, aes(x = sex, y = std_cort, fill = sex)) +
   theme(legend.position = "none")+
   theme(text = element_text(family = "Arial"))
 ```
-
-
 
 ### 3.2 Habitat
 
@@ -247,8 +267,6 @@ cort_habitat_plot <- ggplot(metadata, aes(x = habitat, y = std_cort, fill = habi
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 3.3 Rank
 
 ```R
@@ -282,8 +300,6 @@ cort_rank_plot <- ggplot(metadata, aes(x = rank, y = std_cort, fill = rank)) +
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 3.4 Adjust p values
 
 ```R
@@ -300,13 +316,7 @@ adjusted_p_values_cort
 [1]    "0.767"  "0.371"    "0.951"    "0.951" 
 ```
 
-
-
-
-
 ## 4. Hemagglutination
-
-
 
 ### 4.1 Sex
 
@@ -340,8 +350,6 @@ HA_sex_plot <- ggplot(metadata, aes(x = sex, y = std_ha, fill = sex)) +
   theme(legend.position = "none")+
   theme(text = element_text(family = "Arial"))
 ```
-
-
 
 ### 4.2 Habitat
 
@@ -378,8 +386,6 @@ HA_habitat_plot <- ggplot(metadata, aes(x = habitat, y = std_ha, fill = habitat)
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 4.3 Rank
 
 ```R
@@ -413,8 +419,6 @@ HA_rank_plot <- ggplot(metadata, aes(x = rank, y = std_ha, fill = rank)) +
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 4.4 Adjust p values
 
 ```R
@@ -431,11 +435,7 @@ adjusted_p_values_ha
 [1]    "0.128"   "0.128"   "0.384"    "0.560"
 ```
 
-
-
 ## 5. Hemolysis
-
-
 
 ### 5.1 Sex
 
@@ -469,8 +469,6 @@ HL_sex_plot <- ggplot(metadata, aes(x = sex, y = std_hl, fill = sex)) +
   theme(legend.position = "none")+
   theme(text = element_text(family = "Arial"))
 ```
-
-
 
 ### 5.2 Habitat
 
@@ -506,8 +504,6 @@ HL_habitat_plot <- ggplot(metadata, aes(x = habitat, y = std_hl, fill = habitat)
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 5.3 Rank
 
 ```R
@@ -541,8 +537,6 @@ HL_rank_plot <- ggplot(metadata, aes(x = rank, y = std_hl, fill = rank)) +
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 5.4 Adjust p values
 
 ```R
@@ -559,13 +553,7 @@ adjusted_p_values_hl
 [1]    "0.260"   "0.428"   "0.713"   "0.260" 
 ```
 
-
-
-
-
 ## 6. Bacteria killing assay
-
-
 
 ### 6.1 Sex
 
@@ -599,8 +587,6 @@ BKA_sex_plot <- ggplot(metadata, aes(x = sex, y = std_bka, fill = sex)) +
   theme(legend.position = "none")+
   theme(text = element_text(family = "Arial"))
 ```
-
-
 
 ### 6.2 Habitat
 
@@ -636,8 +622,6 @@ BKA_habitat_plot <- ggplot(metadata, aes(x = habitat, y = std_bka, fill = habita
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 6.3 Rank
 
 ```R
@@ -671,8 +655,6 @@ BKA_rank_plot <- ggplot(metadata, aes(x = rank, y = std_bka, fill = rank)) +
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 6.4 Adjust p values
 
 ```R
@@ -689,13 +671,7 @@ adjusted_p_values_bka
 [1]    "0.930"   "0.600"   "0.798"    "0.600"  
 ```
 
-
-
-
-
 ## 7. Lysozyme
-
-
 
 ### 7.1 Sex
 
@@ -729,8 +705,6 @@ lyso_sex_plot <- ggplot(metadata, aes(x = sex, y = std_lyso, fill = sex)) +
   theme(legend.position = "none")+
   theme(text = element_text(family = "Arial"))
 ```
-
-
 
 ### 7.2 Habitat
 
@@ -766,8 +740,6 @@ lyso_habitat_plot <- ggplot(metadata, aes(x = habitat, y = std_lyso, fill = habi
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 7.3 Rank
 
 ```R
@@ -801,8 +773,6 @@ lyso_rank_plot <- ggplot(metadata, aes(x = rank, y = std_lyso, fill = rank)) +
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 7.4 Adjust p values
 
 ```R
@@ -819,13 +789,7 @@ adjusted_p_values_lyso
 [1]   "0.520"   "0.149"    "0.002"    "0.520" 
 ```
 
-
-
-
-
 ## 8. Immunoglobulin Y
-
-
 
 ### 8.1 Sex
 
@@ -863,8 +827,6 @@ igy_sex_plot <- ggplot(metadata, aes(x = sex, y = std_igy, fill = sex)) +
   theme(text = element_text(family = "Arial"))
 ```
 
-
-
 ### 8.2 Habitat
 
 ```R
@@ -901,7 +863,6 @@ igy_habitat_plot <- ggplot(metadata, aes(x = habitat, y = std_igy, fill = habita
 ```
 
 
-
 ### 8.3 Rank
 
 ```R
@@ -936,7 +897,6 @@ igy_rank_plot <- ggplot(metadata, aes(x = rank, y = std_igy, fill = rank)) +
 ```
 
 
-
 ### 8.4 Adjust p values
 
 ```R
@@ -953,25 +913,15 @@ adjusted_p_values_igy
 [1]   "0.111"    "0.002"    "0.584"   "0.950" 
 ```
 
-
-
-
-
 ## 9. Associations between the variables of interest and: sex; habitat and rank
-
-
 
 ### 9.1 Body condition index (BCI)
 
 ![bci_interactions_all](/home/localadmin/microbiome-analysis/Path_analysis/Main_figures_tables/Supplementary/bci_interactions_all.svg)
 
-
-
 ### 9.2 CORT
 
 ![cort_interactions_all](/home/localadmin/microbiome-analysis/Path_analysis/Main_figures_tables/Supplementary/cort_interactions_all.svg)
-
-
 
 ### 9.3 Immune assays
 
