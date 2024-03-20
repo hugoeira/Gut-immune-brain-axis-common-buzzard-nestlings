@@ -1,22 +1,49 @@
 # Bayesian Structural Equation Modelling - constructing and modelling latent variable *"Immunity"* 
 
 
-
-------
-
-## Table of contents
-
-[TOC]
-
-------
-
-
+- [Bayesian Structural Equation Modelling - constructing and modelling latent variable *"Immunity"*](#bayesian-structural-equation-modelling---constructing-and-modelling-latent-variable---immunity--)
+  * [A) 16S rRNA (bacterial microbiota) SEM analysis](#a--16s-rrna--bacterial-microbiota--sem-analysis)
+    + [1. Build a latent variable](#1-build-a-latent-variable)
+    + [2. Define SEM for each diversity measurement](#2-define-sem-for-each-diversity-measurement)
+    + [3. Run brms](#3-run-brms)
+    + [4. Model Diagnostics Shannon](#4-model-diagnostics-shannon)
+      - [4.1 Model Summary](#41-model-summary)
+      - [4.2 Model diagnostics](#42-model-diagnostics)
+      - [4.3 Compare distribution of response variable to distributions of predicted response variable](#43-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable)
+      - [4.4 Plot model posterior and credible intervals](#44-plot-model-posterior-and-credible-intervals)
+    + [5. Model diagnostics - Faith PD](#5-model-diagnostics---faith-pd)
+      - [5.1 Model summary](#51-model-summary)
+      - [5.2 Model diagnostics](#52-model-diagnostics)
+      - [5.3 Compare distribution of response variable to distributions of predicted response variable](#53-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable)
+      - [5.4 Plot model posterior and credible intervals](#54-plot-model-posterior-and-credible-intervals)
+    + [6. Model diagnostics - N° of observed ASV's](#6-model-diagnostics---n--of-observed-asv-s)
+      - [6.1 Model summary](#61-model-summary)
+      - [6.2 Model diagnostics](#62-model-diagnostics)
+      - [6.3 Compare distribution of response variable to distributions of predicted response variable](#63-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable)
+      - [6.4 Plot model posterior and credible intervals](#64-plot-model-posterior-and-credible-intervals)
+  * [B) 28S rRNA (eukaryotic microbiota) SEM analysis](#b--28s-rrna--eukaryotic-microbiota--sem-analysis)
+    + [1. Build the latent variable](#1-build-the-latent-variable)
+    + [2. Define SEM for each diversity measurement](#2-define-sem-for-each-diversity-measurement-1)
+    + [3. Run brms](#3-run-brms-1)
+    + [4. Model Diagnostics - Shannon](#4-model-diagnostics---shannon)
+      - [4.1 Model Summary](#41-model-summary-1)
+      - [4.2 Model diagnostics](#42-model-diagnostics-1)
+      - [4.3 Compare distribution of response variable to distributions of predicted response variable](#43-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable-1)
+      - [4.4 Plot model posterior and credible intervals](#44-plot-model-posterior-and-credible-intervals-1)
+    + [5. Model diagnostics - Faith PD](#5-model-diagnostics---faith-pd-1)
+      - [5.1 Model summary](#51-model-summary-1)
+      - [5.2 Model diagnostics](#52-model-diagnostics-1)
+      - [5.3 Compare distribution of response variable to distributions of predicted response variable](#53-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable-1)
+      - [5.4 Plot model posterior and credible intervals](#54-plot-model-posterior-and-credible-intervals-1)
+    + [6. Model diagnostics - N° of observed ASV's](#6-model-diagnostics---n--of-observed-asv-s-1)
+      - [6.1 Model summary](#61-model-summary-1)
+      - [6.2 Model diagnostics](#62-model-diagnostics-1)
+      - [6.3 Compare distribution of response variable to distributions of predicted response variable](#63-compare-distribution-of-response-variable-to-distributions-of-predicted-response-variable-1)
+      - [6.4 Plot model posterior and credible intervals](#64-plot-model-posterior-and-credible-intervals-1)
 
 
 
 ## A) 16S rRNA (bacterial microbiota) SEM analysis
-
-
 
 ### 1. Build a latent variable 
 
@@ -302,7 +329,6 @@ metadata$pred_immunity <- as.numeric(metadata$pred_immunity)
 ```
 
 
-
 ### 2. Define SEM for each diversity measurement 
 
 ```R
@@ -345,7 +371,6 @@ sem_immunity_asv <- path1 + path2 + path3 + path4
 ```
 
 
-
 ### 3. Run brms
 
 ```R
@@ -375,7 +400,6 @@ model_immunity_asv <-brm(sem_immunity_asv + set_rescor(FALSE),
 ```
 
 
-
 ### 4. Model Diagnostics Shannon
 
 #### 4.1 Model Summary
@@ -388,8 +412,6 @@ summary_shannon<- summary(model_immunity_shannon)
 R2m_shannon <- bayes_R2(model_immunity_shannon,re_formula=NA)
 R2c_shannon <- bayes_R2(model_immunity_shannon)
 ```
-
-
 
 #### 4.2 Model diagnostics 
 
@@ -407,7 +429,6 @@ for (i in 1:length(diagnostic_shannon)) {
 ```
 
 ![16s_diagnostic_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_diagnostic_shannon.png)
-
 
 
 #### 4.3 Compare distribution of response variable to distributions of predicted response variable
@@ -431,7 +452,6 @@ for (i in seq_along(responses)) {
 ![16s_posterior_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_posterior_shannon.svg)
 
 
-
 #### 4.4 Plot model posterior and credible intervals
 
 ```R
@@ -451,7 +471,6 @@ ggsave(filename="16s_effect_sizes_shannon.svg", plot=plot1, device = "svg", widt
 ```
 
 
-
 ### 5. Model diagnostics - Faith PD
 
 #### 5.1 Model summary
@@ -464,8 +483,6 @@ summary_faith<- summary(model_immunity_faith)
 R2m_faith <- bayes_R2(model_immunity_faith,re_formula=NA)
 R2c_faith <- bayes_R2(model_immunity_faith)
 ```
-
-
 
 #### 5.2 Model diagnostics 
 
@@ -485,7 +502,6 @@ for (i in 1:length(diagnostic_faith)) {
 ![16s_diagnostic_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_diagnostic_faith.png)
 
 
-
 #### 5.3 Compare distribution of response variable to distributions of predicted response variable
 
 ```R
@@ -501,7 +517,6 @@ for (i in seq_along(responses)) {
 ```
 
 ![16s_posterior_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_posterior_faith.svg)
-
 
 
 #### 5.4 Plot model posterior and credible intervals
@@ -523,7 +538,6 @@ ggsave(filename="16s_effect_sizes_faith.svg", plot=plot1, device = "svg", width 
 ```
 
 
-
 ### 6. Model diagnostics - N° of observed ASV's
 
 #### 6.1 Model summary
@@ -536,8 +550,6 @@ summary_asv<- summary(model_immunity_asv)
 R2m_asv <- bayes_R2(model_immunity_asv,re_formula=NA)
 R2c_asv <- bayes_R2(model_immunity_asv)
 ```
-
-
 
 #### 6.2 Model diagnostics 
 
@@ -557,7 +569,6 @@ for (i in 1:length(diagnostic_asv)) {
 ![16s_diagnostic_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_diagnostic_asv.png)
 
 
-
 #### 6.3 Compare distribution of response variable to distributions of predicted response variable
 
 ```R
@@ -573,7 +584,6 @@ for (i in seq_along(responses)) {
 ```
 
 ![16s_posterior_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/16s/Immunity_age/diagnostic_plots/16s_posterior_asv.svg)
-
 
 
 #### 6.4 Plot model posterior and credible intervals
@@ -595,12 +605,7 @@ ggsave(filename="16s_effect_sizes_asv.svg", plot=plot1, device = "svg", width = 
 ```
 
 
-
-
-
 ## B) 28S rRNA (eukaryotic microbiota) SEM analysis
-
-
 
 ### 1. Build the latent variable
 
@@ -641,7 +646,6 @@ fitMeasures(fit_factor1, c("pvalue.scaled","cfi.robust","rmsea.robust","srmr"))
 ```
 
 
-
 ### 2. Define SEM for each diversity measurement 
 
 ```R
@@ -684,7 +688,6 @@ sem_immunity_asv <- path1 + path2 + path3 + path4
 ```
 
 
-
 ### 3. Run brms
 
 ```R
@@ -714,9 +717,6 @@ model_immunity_asv <-brm(sem_immunity_asv + set_rescor(FALSE),
 ```
 
 
-
-
-
 ### 4. Model Diagnostics - Shannon
 
 #### 4.1 Model Summary
@@ -729,8 +729,6 @@ summary_shannon<- summary(model_immunity_shannon)
 R2m_shannon <- bayes_R2(model_immunity_shannon,re_formula=NA)
 R2c_shannon <- bayes_R2(model_immunity_shannon)
 ```
-
-
 
 #### 4.2 Model diagnostics 
 
@@ -748,7 +746,6 @@ for (i in 1:length(diagnostic_shannon)) {
 ```
 
 ![28s_diagnostic_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_diagnostic_shannon.png)
-
 
 
 #### 4.3 Compare distribution of response variable to distributions of predicted response variable
@@ -773,7 +770,6 @@ for (i in seq_along(responses)) {
 ![28s_posterior_shannon](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_posterior_shannon.svg)
 
 
-
 #### 4.4 Plot model posterior and credible intervals
 
 ```R
@@ -793,9 +789,6 @@ ggsave(filename="16s_effect_sizes_shannon.svg", plot=plot4, device = "svg", widt
 ```
 
 
-
-
-
 ### 5. Model diagnostics - Faith PD
 
 #### 5.1 Model summary
@@ -808,8 +801,6 @@ summary_faith<- summary(model_immunity_faith)
 R2m_faith <- bayes_R2(model_immunity_faith,re_formula=NA)
 R2c_faith <- bayes_R2(model_immunity_faith)
 ```
-
-
 
 #### 5.2 Model diagnostics 
 
@@ -829,7 +820,6 @@ for (i in 1:length(diagnostic_faith)) {
 ![28s_diagnostic_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_diagnostic_faith.png)
 
 
-
 #### 5.3 Compare distribution of response variable to distributions of predicted response variable
 
 ```R
@@ -845,7 +835,6 @@ for (i in seq_along(responses)) {
 ```
 
 ![28s_posterior_faith](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_posterior_faith.svg)
-
 
 
 #### 5.4 Plot model posterior and credible intervals
@@ -866,8 +855,6 @@ theme(text = element_text(family = "Arial"))
 ggsave(filename="16s_effect_sizes_faith.svg", plot=plot5, device = "svg", width = 8, height = 10)
 ```
 
-
-
 ### 6. Model diagnostics - N° of observed ASV's
 
 #### 6.1 Model summary
@@ -880,8 +867,6 @@ summary_asv<- summary(model_immunity_asv)
 R2m_asv <- bayes_R2(model_immunity_asv,re_formula=NA)
 R2c_asv <- bayes_R2(model_immunity_asv)
 ```
-
-
 
 #### 6.2 Model diagnostics 
 
@@ -901,7 +886,6 @@ for (i in 1:length(diagnostic_asv)) {
 ![28s_diagnostic_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_diagnostic_asv.png)
 
 
-
 #### 6.3 Compare distribution of response variable to distributions of predicted response variable
 
 ```R
@@ -919,8 +903,7 @@ for (i in seq_along(responses)) {
 ![28s_posterior_asv](/home/localadmin/microbiome-analysis/Path_analysis/alpha-diversity/28s/immunity_age/28s_posterior_asv.svg)
 
 
-
-#### 5.4 Plot model posterior and credible intervals
+#### 6.4 Plot model posterior and credible intervals
 
 ```R
 #Plot Model effects
